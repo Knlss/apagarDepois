@@ -1,10 +1,10 @@
 :root {
     --bodyBackgroundColor: #f5f5e6;
     --textColor: #3e3e3e;
-    --sectionBackgroundColor: #99bb33;
+    --headerBackgroundColor: #8aec6c;
     --sectionBorderColor: #668f4f;
-    --navigationMenuOptionColor: #649356;
-    --navigationMenuOptionColorHover: #203f04;
+    --navigationMenuOptionColor: #1f7e01;
+    --navigationMenuOptionColorHover: #162c03;
     --toggleIndexLinkColor: #853d25;
     --toggleIndexLinkHover: #555424;
     --index_display: none;
@@ -19,12 +19,13 @@
     --bodyShadowHover: rgba(0, 0, 0);
     --cardUserName: #5d3a1a;
     --cardTimestamp: #7a6652;
+    --footerBackgroundColor: #99bb33;
 }
 
 :root:has(#toggleModeButton:checked) {
     --bodyBackgroundColor: #1e2b1b;
     --textColor: #f1faea;
-    --sectionBackgroundColor: #314b2d;
+    --headerBackgroundColor: #151d13;
     --sectionBorderColor: #6c9a5e;
     --navigationMenuOptionColor: #c1fdb3;
     --navigationMenuOptionColorHover: #8cff52;
@@ -38,6 +39,7 @@
     --recommendedCardTitle: #eeeeee;
     --cardUserName: #cec795;
     --cardTimestamp: #c3c7b2;
+    --footerBackgroundColor: #314b2d;
 }
 
 :root:has(#toggleIndexButton:checked) {
@@ -68,6 +70,7 @@ h3 {
 
 .header {
     display: flex;
+    background-color: var(--headerBackgroundColor);
     top: 0;
     left: 0;
     width: 100%;
@@ -82,7 +85,7 @@ h3 {
 }
 
 .logoImage {
-    width: 144px;
+    width: 162px;
     height: 81px;
 }
 
@@ -123,7 +126,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--bodyBackgroundColor);
+    background-color: var(--headerBackgroundColor);
     border-radius: 34px;
     transition: .4s;
 }
@@ -544,7 +547,7 @@ input:checked+.toggleMode-btn:before {
 
 .footer {
     border-top: 10px var(--sectionBorderColor) solid;
-    background-color: var(--sectionBackgroundColor);
+    background-color: var(--footerBackgroundColor);
     transition: background-color .4s ease;
     padding: 5px 70px;
     display: flex;
@@ -580,6 +583,7 @@ input:checked+.toggleMode-btn:before {
 .contentArticleShare ul {
     display: flex;
     justify-content: center;
+    padding-left: 0;
 }
 
 .contentArticleShare ul li {
@@ -640,7 +644,7 @@ input:checked+.toggleMode-btn:before {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 8px 16px;
+        padding: 8px 7px;
         width: auto;
         height: auto;
         font-size: 22px;
@@ -649,6 +653,7 @@ input:checked+.toggleMode-btn:before {
     .header .logoImage {
         width: 60px; 
         height: auto;
+        margin-right: 8px;
     }
 
     .navigationMenu {
@@ -721,7 +726,6 @@ input:checked+.toggleMode-btn:before {
     }
 
     .contentRecommendedCard {
-        background-color: #fdf6e3;
         border-radius: 8px;
         width: 100%;
         margin-left: 0px;
@@ -753,12 +757,6 @@ input:checked+.toggleMode-btn:before {
         padding: 30px 20px;
     }
 
-    .contentBlogInformation {
-        flex-direction: column;
-        align-items: initial;
-        margin: 0px 0px 20px;
-    }
-
     .contentBlogAbout {
         width: auto;
         margin-bottom: 30px;
@@ -766,8 +764,6 @@ input:checked+.toggleMode-btn:before {
 
     .contentArticleShare ul {
         flex-direction: row;
-        padding-left: 0;
-        margin: 16px 0px 30px;
     }
 
     .contentArticleShare ul li {
@@ -784,8 +780,18 @@ input:checked+.toggleMode-btn:before {
         height: 20px;
     }
 
+
+    .footer .logoImage {
+        width: 55%; 
+    }
+
+    .contentBlogInformation {
+        flex-direction: column;
+        align-items: initial;
+        margin: 0px 0px 20px;
+    }
+
     .address, .copyright{
         margin-left: 20px;
     }
 }
-
