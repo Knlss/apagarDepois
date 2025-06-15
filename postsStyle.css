@@ -7,8 +7,8 @@
     --navigationMenuOptionColorHover: #162c03;
     --toggleIndexLinkColor: #853d25;
     --toggleIndexLinkHover: #555424;
-    --index_display: none;
-    --index_width: 290px;
+    --toggleIndexDisplay: none;
+    --toggleIndexWidth: 290px;
     --articleSessionBackgroundColor: #ededda;
     --slideBarColor: #c0d9a7;
     --slideBarHover: #aac96d;
@@ -40,11 +40,6 @@
     --cardUserName: #cec795;
     --cardTimestamp: #c3c7b2;
     --footerBackgroundColor: #314b2d;
-}
-
-:root:has(#toggleIndexButton:checked) {
-    --index_display: flex;
-    --index_width: 40%;
 }
 
 html {
@@ -80,7 +75,7 @@ h3 {
     font-size: 38px;
     font-weight: bold;
     height: 110px;
-    padding-left: 24px;
+    padding-left: 12px;
     border-bottom: 10px var(--sectionBorderColor) solid;
 }
 
@@ -98,12 +93,12 @@ h3 {
     font-size: 25px;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
 }
 
 .navigationMenuOption {
     color: var(--navigationMenuOptionColor);
     text-decoration: none;
+    margin: 0px 40px;
 }
 
 .navigationMenuOption:hover {
@@ -116,7 +111,7 @@ h3 {
     height: 34px;
     border: 3px var(--sectionBorderColor) solid;
     border-radius: 34px;
-    margin: 0px 4% 0px 78px;
+    margin: 0px 2% 0px 78px;
 }
 
 .toggleMode input {
@@ -153,6 +148,11 @@ input:checked+.toggleMode-btn {
 
 input:checked+.toggleMode-btn:before {
     transform: translateX(26px);
+}
+
+:root:has(#toggleIndexButton:checked) {
+    --toggleIndexDisplay: flex;
+    --toggleIndexWidth: 40%;
 }
 
 .contentCentralTitle {
@@ -193,7 +193,7 @@ input:checked+.toggleMode-btn:before {
     flex-direction: column;
     font-size: 18px;
     margin: 20px 20% 40px 18%;
-    width: var(--index_width);
+    width: var(--toggleIndexWidth);
     border: 1px solid var(--sectionBorderColor);
 }
 
@@ -224,7 +224,7 @@ input:checked+.toggleMode-btn:before {
 
 .contentToggleIndex ul {
     list-style-type: none;
-    display: var(--index_display);
+    display: var(--toggleIndexDisplay);
     flex-direction: column;
 }
 
@@ -636,12 +636,12 @@ input:checked+.toggleMode-btn:before {
 @media (max-width: 780px) {
 
     :root {
-        --index_width: 290px;
+        --toggleIndexWidth: 290px;
     }
 
     :root:has(#toggleIndexButton:checked) {
-        --index_width: 290px;
-        --index_display: flex;
+        --toggleIndexWidth: 290px;
+        --toggleIndexDisplay: flex;
     }
 
     .header {
@@ -654,7 +654,11 @@ input:checked+.toggleMode-btn:before {
         font-size: 22px;
     }
 
-    .header .logoImage {
+    .logoImageLink {
+        height: 30px;
+    }
+
+    .logoImageLink .logoImage {
         width: 60px; 
         height: auto;
         margin-right: 8px;
