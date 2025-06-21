@@ -1,0 +1,537 @@
+:root {
+    --toggleIndexLinkColor: #934126;
+    --toggleIndexLinkHover: #27260a;
+    --indexDisplay: none;
+    --indexWidth: 290px;
+    --articleSectionBackgroundColor: #ededda;
+    --slideBarColor: #c0d9a7;
+    --slideBarHover: #aac96d;
+    --recommendedCardBackgroundColor: #fffbea;
+    --recommendedCardInfs: #8c8c8c;
+    --recommendedCardTitle: #222222;
+    --bodyShadow: rgba(0, 0, 0, 0.5);
+    --bodyShadowHover: rgba(0, 0, 0);
+    --cardUserName: #5d3a1a;
+    --cardTimestamp: #7a6652;
+}
+
+:root:has(#toggleModeButton:checked) {
+    --toggleIndexLinkColor: #a4d07b;
+    --toggleIndexLinkHover: #d9d40c;
+    --articleSectionBackgroundColor: #22301f;
+    --slideBarColor: #4e8849;
+    --slideBarHover: #668f4f;
+    --recommendedCardBackgroundColor: #2a3827;
+    --recommendedCardInfs: #aaaaaa;
+    --recommendedCardTitle: #eeeeee;
+    --cardUserName: #cec795;
+    --cardTimestamp: #c3c7b2;
+}
+
+:root:has(#toggleIndexButton:checked) {
+    --indexDisplay: flex;
+    --indexWidth: 40%;
+}
+
+h3 {
+    margin-block-start: 0px
+}
+
+.contentCentralTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contentCentralTitle h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0px 10px 0px;
+}
+
+.contentTitleImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 40px auto;
+}
+
+.titleImage {
+    width: 69%;
+    border-radius: 40px;
+}
+
+.articleImageText, .articleSliderText, .titleImageText {
+    margin: 2px auto 0px;
+    font-size: 10px;
+}
+
+.contentToggleIndex {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 20px 20% 40px 18%;
+    width: var(--indexWidth);
+    border: 1px solid var(--sectionBorderColor);
+}
+
+.contentToggleIndex label {
+    font-weight: 400;
+}
+
+.toggleIndexButton {
+    display: none;
+}
+
+.contentToggleIndex h5 {
+    margin: 15px auto;
+}
+
+.contentToggleIndex h5:has(#toggleIndexButton:checked) {
+    margin: 15px auto 20px auto;
+}
+
+.contentToggleIndex label, 
+.listIndexItems,
+.listIndexItems a {
+    text-decoration: none;
+    color: var(--toggleIndexLinkColor);
+    cursor: pointer;
+}
+
+.listIndexItems a:hover,
+.textBlock a:hover,
+.contentToggleIndex label:hover {
+    color: var(--toggleIndexLinkHover);
+}
+
+.contentToggleIndex ul {
+    display: var(--indexDisplay);
+    flex-direction: column;
+    cursor: default;
+}
+
+.listIndexItems {
+    font-size: 15px;
+    padding-left: 40px;
+}
+
+.listIndexItems li {
+    padding: 0 0 10px 0;
+    list-style: none;
+}
+
+.listIndexItems ul {
+    padding-left: 20px;
+}
+
+.contentArticleSection {
+    background-color: var(--articleSectionBackgroundColor);
+    width: 1000px;
+    margin: 40px auto;
+    padding: 26px 0px;
+    border-radius: 30px;
+}
+
+.contentArticleText {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 20px auto 40px auto;
+    width: 80%
+}
+
+.subTitle {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.contentArticleText a {
+    text-decoration: none;
+    color: var(--toggleIndexLinkColor);
+}
+
+.articleText {
+    margin: 8px 0;
+    text-indent: 30px;
+    padding-left: 10px;
+}
+
+.contentArticleImage {
+    display: flex;
+    flex-direction: column;
+    width: 720px;
+    height: 458px;
+    align-items: center;
+    margin: 20px auto 40px auto;
+}
+
+.articleImage {
+    width: 720px;
+    height: 450px;
+    border-radius: 40px;
+}
+
+.contentArticleSlide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 30px auto;
+}
+
+.articleSlider {
+    width: 720px;
+    height: 450px;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+}
+
+.contentArticleSlide .articleSlider img {
+    height: 100%;
+    width: 100%;
+}
+
+.sliderInput {
+    display: none;
+}
+
+@keyframes slideshow1 {
+    0%, 16.66% {
+        margin-left: 0%;
+    }
+
+    33.33%, 49.99% {
+        margin-left: -33.33%;
+    }
+
+    66.66%, 83.32% {
+        margin-left: -66.66%;
+    }
+
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes slideshow2 {
+    0%, 16.66% {
+        margin-left: -33.33%;
+    }
+
+    33.33%, 49.99% {
+        margin-left: -66.66%;
+    }
+
+    66.66%, 83.32% {
+        margin-left: 0%;
+    }
+
+    100% {
+        margin-left: -33.33%;
+    }
+}
+
+
+@keyframes slideshow3 {
+    0%, 16.66% {
+        margin-left: -66.66%;
+    }
+
+    33.33%, 49.99% {
+        margin-left: 0%;
+    }
+
+    66.66%, 83.32% {
+        margin-left: -33.33%;
+    }
+
+    100% {
+        margin-left: -66.66%;
+    }
+}
+
+#slide1:checked~.s1 {
+    animation: slideshow1 20s infinite;
+    position: relative;
+}
+
+#slide2:checked~.s1 {
+    animation: slideshow2 20s infinite;
+    position: relative;
+}
+
+#slide3:checked~.s1 {
+    animation: slideshow3 20s infinite;
+    position: relative;
+}
+
+.slideshow {
+    width: 33.33%;
+    transition: .4s;
+}
+
+.sliderNavigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.sliderBar {
+    width: 70px;
+    height: 11px;
+    border: 2px solid var(--slideBarColor);
+    border-radius: 25px;
+    margin: 2%;
+}
+
+.sliderBar:hover {
+    background-color: var(--slideBarHover);
+}
+
+.contentReferenceSection, .contentRecommendedSection, .contentCommentSection {
+    display: flex;
+    flex-direction: column;
+    width: 65%
+}
+
+.contentReferenceSection, .contentRecommendedSection {
+    margin: 20px auto 30px;
+}
+
+.contentReferenceSection h2, .contentRecommendedSection h2, .contentCommentSection h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.horizontalLine {
+    height: 1px; 
+    width: 100%; 
+    background-color: var(--sectionBorderColor); 
+    margin-bottom: 20px;
+}
+
+.contentReferenceSection ul {
+    margin: 10px 0px 0px 10px;
+}
+
+.contentReferenceSection ul li {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.contentRecommendedCard {
+    display: flex;
+    width: 700px;
+    margin: 15px;
+    background-color: var(--recommendedCardBackgroundColor);
+    border-radius: 8px;
+    box-shadow: 0 3px 6px var(--bodyShadow);
+    overflow: hidden;
+}
+
+.contentRecommendedCard a {
+    display: flex;
+    text-decoration: none;
+}
+
+.contentRecommendedCard:hover {
+    box-shadow: 0 4px 12px var(--bodyShadowHover);
+}
+
+.recommendedCard {
+    flex: 1;
+    padding: 20px;
+}
+
+.recommendedCardCategory {
+    font-size: 12px;
+    color: var(--recommendedCardInfs);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recommendedCardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--recommendedCardTitle);
+}
+
+.recommendedCardDescription {
+    color: var(--textColor);
+    margin-bottom: 20px;
+}
+
+.recommendedCardReadMore {
+    font-size: 12px;
+    color: var(--recommendedCardInfs);
+    font-weight: bold;
+    width: 50px;
+    cursor: pointer;
+}
+
+.recommendedCardImage {
+    width: 200px;
+    object-fit: cover;
+}
+
+.contentCommentSection {
+    margin: 10px auto 40px auto;
+}
+
+.commentAmount {
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.contentCommentCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 15px;
+    width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+.commentCardUserAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.commentCard {
+    flex: 1;
+}
+
+.commentCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.commentCardUserName {
+    font-weight: bold;
+    color: var(--cardUserName);
+}
+
+.commentCardTimestamp {
+    font-size: 12px;
+    color: var(--cardTimestamp);
+}
+
+.commentCardText {
+    margin: 0;
+    font-size: 14px;
+    text-indent: 18px;
+}
+
+@media (max-width: 1100px) {
+
+    :root:has(#toggleIndexButton:checked) {
+        --indexWidth: 290px;
+        --indexDisplay: flex;
+    }
+
+    .contentCentralTitle h2 {
+        font-size: 28px;
+        margin: 30px 10px;
+    }
+
+    .contentTitleImage,
+    .contentArticleImage,
+    .contentArticleSlide {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .titleImage,
+    .articleImage,
+    .articleSlider {
+        width: 90%;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .contentToggleIndex {
+        margin: auto;
+    }
+
+    .listIndexItems {
+        padding-left: 10px;
+    }
+
+    .contentArticleSection {
+        padding: 10px;
+        margin: 20px auto 40px auto;
+    }
+
+    .contentArticleText {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .subTitle {
+        font-size: 22px;
+    }
+
+    .articleText {
+        text-indent: 15px;
+        padding-left: 5px;
+    }
+
+    .contentArticleSection, .contentReferenceSection, 
+    .contentCommentSection, .contentRecommendedSection {
+        width: 90%;
+    }
+
+    .contentReferenceSection ul {
+        list-style: decimal;
+        padding-left: 30px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .contentReferenceSection ul li {
+        margin-bottom: 15px;
+    }
+
+    .contentRecommendedCard {
+        border-radius: 8px;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .contentRecommendedCard a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recommendedCardImage {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contentCommentCard {
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+    .commentCardUserAvatar {
+        width: 40px;
+        height: 40px;
+    }
+}

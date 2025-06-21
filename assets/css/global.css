@@ -1,0 +1,219 @@
+:root {
+    --bodyBackgroundColor: #f5f5e6;
+    --textColor: #3e3e3e;
+    --headerBackgroundColor: #8aec6c;
+    --sectionBorderColor: #668f4f;
+    --navigationMenuOptionColor: #1f7e01;
+    --navigationMenuOptionColorHover: #162c03;
+    --footerBackgroundColor: #99bb33;
+}
+
+:root:has(#toggleModeButton:checked) {
+    --bodyBackgroundColor: #1e2b1b;
+    --textColor: #f1faea;
+    --headerBackgroundColor: #151d13;
+    --sectionBorderColor: #6c9a5e;
+    --navigationMenuOptionColor: #c1fdb3;
+    --navigationMenuOptionColorHover: #8cff52;
+    --footerBackgroundColor: #314b2d;
+}
+
+*, *::before, *::after {
+    transition: color 0.4s ease, background-color 0.4s ease, box-shadow .4s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bodyBackgroundColor);
+    color: var(--textColor);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    background-color: var(--headerBackgroundColor);
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    height: 100px;
+    padding-left: 12px;
+    border-bottom: 10px var(--sectionBorderColor) solid;
+}
+
+.logoImageLink {
+    height: 81px;
+}
+
+.logoImage {
+    width: 162px;
+    height: 81px;
+}
+
+.navigationMenu {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.navigationMenuOption {
+    color: var(--navigationMenuOptionColor);
+    text-decoration: none;
+}
+
+.navigationMenuOption:hover {
+    color: var(--navigationMenuOptionColorHover);
+}
+
+.toggleMode {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    border: 3px var(--sectionBorderColor) solid;
+    border-radius: 34px;
+    margin: 0px 2% 0px 78px;
+}
+
+.toggleMode input {
+    display: none;
+}
+
+.toggleMode .toggleMode-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--headerBackgroundColor);
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.toggleMode .toggleMode-btn:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--sectionBorderColor);
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked+.toggleMode-btn {
+    background-color: var(--headerBackgroundColor);
+}
+
+input:checked+.toggleMode-btn:before {
+    transform: translateX(26px);
+}
+
+.footer {
+    border-top: 10px var(--sectionBorderColor) solid;
+    background-color: var(--footerBackgroundColor);
+    padding: 5px 70px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+.contentBlogAbout {
+    width: 300px;
+    margin: 20px;
+}
+
+.contentBlogAbout h3 {
+    margin-bottom: 10px;
+}
+
+.contentBlogAbout p {
+    line-height: 20px;
+}
+
+.footer .logoImage {
+    margin-top: 12px;
+}
+
+.contentBlogInformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px 20px 20px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.address, .copyright {
+    margin: 0;
+}
+
+@media (max-width: 1100px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 7px;
+        width: auto;
+        height: auto;
+        font-size: 22px;
+    }
+
+    .header .logoImageLink {
+        height: 30px;
+    }
+
+    .header .logoImage {
+        width: 60px; 
+        height: auto;
+        margin-right: 8px;
+    }
+
+    .navigationMenu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .toggleMode {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .contentBlogAbout {
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    .contentBlogInformation {
+        flex-direction: column;
+        align-items: initial;
+        margin: 0px 0px 20px;
+    }
+
+    .address, .copyright{
+        margin-left: 20px;
+    }
+}
